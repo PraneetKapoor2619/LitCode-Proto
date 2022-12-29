@@ -1,0 +1,155 @@
+%%%%%%%%%%%%%%%%%%%%%% Preamble %%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper, oneside]{book}
+\usepackage[top = 1.2cm, bottom = 1.2cm, left = 2cm, right = 1cm]{geometry}
+\usepackage{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{nameref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{lipsum}
+\usepackage{tocbibind}
+\usepackage[parfill]{parskip}	% Prevents paragraphs from having indentation
+
+\pagestyle{plain}
+
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=red,  %choose some color if you want links to stand out
+}
+
+% For simple Verbatim code. As verbatim environment does not have a counter,
+% you won't be able to reference the code written in it.
+\newenvironment{vcode}{\Verbatim[tabsize = 4]}{\endVerbatim}
+
+% Listing environments for specific programming languages
+% Generic 1: No captions
+\lstnewenvironment{nocode}{%
+    \lstset{%
+    basicstyle=\ttfamily\small\bfseries,
+    breaklines=true
+    }}
+    {}
+
+
+% For Code with captions
+\lstnewenvironment{code}[1][nocap]{%
+    \lstset{%
+    language = {},
+    caption = #1,
+    basicstyle=\ttfamily\small\bfseries,
+    tabsize=4,
+    breaklines=true
+    }}
+    {}
+
+% For ASM code
+\lstnewenvironment{x86}[1][none]{%
+    \lstset{%
+    language = {[x86masm]Assembler},
+    caption = #1,
+    basicstyle=\ttfamily\small,
+    breaklines=true
+    }}
+    {}
+
+% For Bash
+\lstnewenvironment{Bash}[1][none]{%
+    \lstset{%
+    language = bash,
+    caption = #1,
+    basicstyle=\ttfamily\small,
+    breaklines=true
+    }}
+    {}
+
+% For C code
+\lstnewenvironment{C}[1][none]{%
+    \lstset{%
+    language = C,
+    caption = #1,
+    basicstyle=\ttfamily\small,
+    breaklines=true
+    }}
+    {}
+
+
+% For C++ code
+\lstnewenvironment{Cpp}[1][none]{%
+    \lstset{%
+    language = C++,
+    caption = #1,
+    basicstyle=\ttfamily\small,
+    breaklines=true
+    }}
+    {}
+
+
+% For Python code
+\lstnewenvironment{Python}[1][none]{%
+    \lstset{%
+    language = Python,
+    caption = #1,
+    basicstyle=\ttfamily\small,
+    breaklines=true
+    }}
+    {}
+
+% Setting Courier font, with bold setting.
+% For pretty printing, get rid of \bfseries.
+\renewcommand{\ttdefault}{pcr}
+\lstset{basicstyle=\ttfamily\small\bfseries,breaklines=true}
+
+% Display "full" reference of a label: Section, name and page number
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1}: \nameref*{#1}}} % One single link
+
+%%%%%%%%%%%%%%%%%%%%%% Title Page and Index %%%%%%%%%%%%%%%%%%%%%%
+\title{A Simple Sample Report in \LaTeX
+\\Version $e^{-1}$}
+\author{Firstname Lastname}
+\date{January 1, 1970}
+
+\makeindex
+%%%%%%%%%%%%%%%%%%%%%% Preamble Ends %%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%% Document Environment %%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pagenumbering{roman}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+\listoffigures
+
+\newpage
+\listoftables
+
+\newpage
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%% Chapters %%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%\input{}
+
+\newpage
+$\input{}
+
+%%%%%%%%%%%%%%%%%%%%%% Appendix, Code Snippet Reference, and Index %%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\lstlistoflistings
+
+\newpage
+\printindex
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%% Document Ends %%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,8 @@
+project-name = Vector
+doc-extension = .tex
+
+environments = Verbatim lstlisting vcode nocode code
+environments = bash C Cpp Python x86
+
+comment-start-delimiters = ; // /* #
+comment-end-delimiters = */
